@@ -12,3 +12,4 @@ export const ACTION = 'פעולה';
 
 export const EXPELLED = 'מורחק';
 export const BANNED = 'חסום';
+export const USERNAME = 'שם הגולש';

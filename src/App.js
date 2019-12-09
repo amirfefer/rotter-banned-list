@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FadeIn from 'react-fade-in';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import * as actions from './redux/actions/tableAction';
+import * as actions from './redux/actions/BlockedActions';
 import './App.css';
 import Search from './components/Search';
 import Loading from './components/Loading';

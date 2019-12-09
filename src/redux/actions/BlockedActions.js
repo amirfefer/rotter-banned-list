@@ -8,6 +8,7 @@ import {
   FETCH_BLOCKED_LIST_STOP_LOADING,
   FETCH_BLOCKED_LIST_ERROR,
   FETCH_BLOCKED_LIST,
+  USERNAME,
 } from '../../common/consts';
 
 const iconv = require('iconv-lite');
@@ -30,9 +31,9 @@ export const fectchBlockedWithAxios = () => async (dispatch) => {
   });
   try {
     const result = await axios.get(PROXIED_ROTTER_BLOCKED_URL, { responseType: 'arraybuffer' });
-    const data = iconv.decode(arrayBufferToBuffer(result.data), 'win-1255');
-    const table = getTableFromHTNL(data);
-    const blockedList = groupBy(table, 'שם הגולש');
+    const decodedData = iconv.decode(arrayBufferToBuffer(result.data), 'win-1255');
+    const table = getTableFromHTNL(decodedData);
+    const blockedList = groupBy(table, USERNAME);
     dispatch({
       type: FETCH_BLOCKED_LIST,
       payload: blockedList,
