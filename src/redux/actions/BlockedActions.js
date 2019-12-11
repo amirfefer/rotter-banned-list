@@ -33,10 +33,9 @@ export const fectchBlockedWithAxios = () => async (dispatch) => {
     const result = await axios.get(PROXIED_ROTTER_BLOCKED_URL, { responseType: 'arraybuffer' });
     const decodedData = iconv.decode(arrayBufferToBuffer(result.data), 'win-1255');
     const table = getTableFromHTNL(decodedData);
-    const blockedList = groupBy(table, USERNAME);
     dispatch({
       type: FETCH_BLOCKED_LIST,
-      payload: blockedList,
+      payload: table,
     });
     setTimeout(() => dispatch({
       type: FETCH_BLOCKED_LIST_STOP_LOADING,

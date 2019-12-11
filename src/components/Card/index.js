@@ -46,7 +46,11 @@ const Cards = ({ items }) => {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Typography className={expelledOrBanned(action) ? classes.headingBlocked : classes.heading}>{action}</Typography>
+                <Typography
+                  className={expelledOrBanned(action) ? classes.headingBlocked : classes.heading}
+                >
+                  {action}
+                </Typography>
                 <Typography className={classes.secondaryHeading}>
                   {date}
                 </Typography>
@@ -65,7 +69,6 @@ const Cards = ({ items }) => {
           </FadeIn>
         );
       }))}
-      {/* </FadeIn> */}
     </div>
   );
 };
