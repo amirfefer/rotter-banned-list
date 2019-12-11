@@ -13,3 +13,6 @@ export const ACTION = 'פעולה';
 export const EXPELLED = 'מורחק';
 export const BANNED = 'חסום';
 export const USERNAME = 'שם הגולש';
+
+export const TOP_BLOCKED = 'מצעד החסומים';
+export const RECENT_BLOCK = 'חסומים אחרונים';
